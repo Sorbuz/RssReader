@@ -7,6 +7,6 @@ namespace RssReader.API.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base (options) { }
 
-        public DbSet<RssFeed> RssFeeds { get; set; }
+        public DbSet<RssFeedUrl> RssFeeds { get; set; }
     }
 }

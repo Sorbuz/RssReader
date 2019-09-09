@@ -8,8 +8,8 @@ using RssReader.API.Data;
 namespace RssReader.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190906093531_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20190909173016_UpdatedName")]
+    partial class UpdatedName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -17,7 +17,7 @@ namespace RssReader.API.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
-            modelBuilder.Entity("RssReader.API.Models.RssFeed", b =>
+            modelBuilder.Entity("RssReader.API.Models.RssFeedUrl", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();

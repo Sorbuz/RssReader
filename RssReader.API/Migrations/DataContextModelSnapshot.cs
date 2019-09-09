@@ -15,7 +15,7 @@ namespace RssReader.API.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
-            modelBuilder.Entity("RssReader.API.Models.RssFeed", b =>
+            modelBuilder.Entity("RssReader.API.Models.RssFeedUrl", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();

@@ -2,7 +2,7 @@
 
 namespace RssReader.API.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class UpdatedName : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
