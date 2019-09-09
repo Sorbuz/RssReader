@@ -26,7 +26,6 @@ namespace RssReader.API.Controllers
       foreach (var feedSource in context.RssFeeds) {
         var feed = await FeedReader.ReadAsync(feedSource.Url);
        
-        
         feedList.Add(new RssFeed{
           Title = feed.Title,
           Link = feed.Link,
