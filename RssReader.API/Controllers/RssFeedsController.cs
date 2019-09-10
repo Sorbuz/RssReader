@@ -22,7 +22,6 @@ namespace RssReader.API.Controllers
     [HttpGet]
     public async Task<IActionResult> GetRssItems()
     {
-      Console.WriteLine("HEY");
       List<RssFeed> feedList = new List<RssFeed>();
 
       foreach (var feedSource in context.RssFeeds) {
