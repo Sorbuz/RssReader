@@ -5,6 +5,7 @@ using RssReader.API.Data;
 using CodeHollow.FeedReader;
 using System.Collections.Generic;
 using RssReader.API.Models;
+using System;
 
 namespace RssReader.API.Controllers
 {
@@ -21,6 +22,7 @@ namespace RssReader.API.Controllers
     [HttpGet]
     public async Task<IActionResult> GetRssItems()
     {
+      Console.WriteLine("HEY");
       List<RssFeed> feedList = new List<RssFeed>();
 
       foreach (var feedSource in context.RssFeeds) {
