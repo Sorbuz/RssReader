@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RssService } from 'src/app/services/rss.service';
 import { RssFeed } from 'src/app/models/RssFeed';
+import { FeedItem } from 'src/app/models/FeedItem';
 
 @Component({
   selector: 'app-rss-items',
@@ -8,8 +9,7 @@ import { RssFeed } from 'src/app/models/RssFeed';
   styleUrls: ['./rss-items.component.css']
 })
 export class RssItemsComponent implements OnInit {
-  feeds: RssFeed[];
-  feedItems: any[];
+  feedItems: FeedItem[];
 
   constructor(private rssService: RssService) { }
 
@@ -18,14 +18,25 @@ export class RssItemsComponent implements OnInit {
     this.getRssFeeds();
   }
   getRssFeeds() {
-    this.rssService.getRssFeeds().subscribe(feeds => {
-      this.feeds = feeds;
-      this.feeds.forEach(feed => {
+    return this.rssService.getRssFeeds().subscribe(feeds => {
+      feeds.forEach(feed => {
         feed.items.forEach(item => {
-          this.feedItems.push(item);
+          const currentItem: FeedItem = {
+            title: item.title,
+            categories: item.categories,
+            description: item.description,
+            id: item.id,
+            link: item.link,
+            publishingDate: item.publishingDate,
+            publishingDateString: item.publishingDateString,
+            source: feed.title
+          };
+          this.feedItems.push(currentItem);
         });
+      });
+      this.feedItems.sort((a, b) => {
+        return b.publishingDate.localeCompare(a.publishingDate);
       });
     });
   }
-
 }
