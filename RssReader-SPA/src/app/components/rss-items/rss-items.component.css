@@ -5,3 +5,14 @@
 .card p {
   font-style: italic;
 }
+
+.card {
+  width: 20rem;
+}
+
+.item {
+  display: inline-flex;
+  position: relative;
+  vertical-align: 0%
+}
+
