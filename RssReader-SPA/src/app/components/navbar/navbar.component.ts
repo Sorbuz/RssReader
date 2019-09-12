@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RssService } from 'src/app/services/rss.service';
 import { RssFeed } from 'src/app/models/RssFeed';
 
@@ -9,8 +9,9 @@ import { RssFeed } from 'src/app/models/RssFeed';
 })
 export class NavbarComponent implements OnInit {
   feeds: RssFeed[];
+  @Output() linkClicked = new EventEmitter<string>();
 
-  constructor(private rssService: RssService) { }
+  constructor(private rssService: RssService) {}
 
   ngOnInit() {
     this.getRssFeeds();
@@ -19,8 +20,9 @@ export class NavbarComponent implements OnInit {
     this.rssService.getRssFeeds().subscribe(feeds => {
       this.feeds = feeds;
     });
-
-
   }
 
+  filterEvent(title: string) {
+    this.linkClicked.emit(title);
+  }
 }

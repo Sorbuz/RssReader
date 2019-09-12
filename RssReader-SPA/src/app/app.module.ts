@@ -14,11 +14,8 @@ import { RssItemsComponent } from './components/rss-items/rss-items.component';
     FooterComponent,
     RssItemsComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

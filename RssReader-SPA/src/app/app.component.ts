@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Rss Reader';
+
+  public clickedEvent: Event;
+
+  childEventClicked(event: Event) {
+    this.clickedEvent = event;
+  }
 }

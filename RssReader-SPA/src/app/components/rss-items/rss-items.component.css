@@ -13,6 +13,8 @@
 .item {
   display: inline-flex;
   position: relative;
-  vertical-align: 0%
 }
 
+.container {
+  margin-bottom: 5em;
+}

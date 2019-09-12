@@ -18,16 +18,18 @@ namespace RssReader.API.Controllers
     {
       this.context = context;
     }
-    
+
     [HttpGet]
     public async Task<IActionResult> GetRssItems()
     {
       List<RssFeed> feedList = new List<RssFeed>();
 
-      foreach (var feedSource in context.RssFeeds) {
+      foreach (var feedSource in context.RssFeeds)
+      {
         var feed = await FeedReader.ReadAsync(feedSource.Url);
-       
-        feedList.Add(new RssFeed{
+
+        feedList.Add(new RssFeed
+        {
           Title = feed.Title,
           Link = feed.Link,
           Description = feed.Description,

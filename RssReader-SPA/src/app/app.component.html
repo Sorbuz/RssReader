@@ -1,3 +1,3 @@
-<app-navbar></app-navbar>
-<app-rss-items></app-rss-items>
+<app-navbar (linkClicked)="childEventClicked($event)"></app-navbar>
+<app-rss-items [linkClicked]="clickedEvent"></app-rss-items>
 <app-footer></app-footer>

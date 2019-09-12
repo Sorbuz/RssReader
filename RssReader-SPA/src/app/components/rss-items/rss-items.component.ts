@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RssService } from 'src/app/services/rss.service';
-import { RssFeed } from 'src/app/models/RssFeed';
 import { FeedItem } from 'src/app/models/FeedItem';
 
 @Component({
@@ -10,8 +9,9 @@ import { FeedItem } from 'src/app/models/FeedItem';
 })
 export class RssItemsComponent implements OnInit {
   feedItems: FeedItem[];
+  @Input() linkClicked: string;
 
-  constructor(private rssService: RssService) { }
+  constructor(private rssService: RssService) {}
 
   ngOnInit() {
     this.feedItems = [];
